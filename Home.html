@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ridhi-Sidhi Consultancy - Single File</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Swiper CSS (v11) - used for all carousels -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Lucide (icons) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      /* small safety for your fixed header so anchors land nicely */
+      :root {
+        --nav-h: 72px;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        padding-top: var(--nav-h);
+      } /* reserve space for fixed navbar */
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <!-- =========================
+       Navbar (kept intact)
+       ========================= -->
+   <header
+  class="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-lg shadow-md transition-all duration-300"
+  id="main-header"
+  style="height: var(--nav-h)"
+>
+  <div
+    class="max-w-[1280px] mx-auto flex items-center px-6 md:px-10 py-3 justify-between"
+  >
+    <!-- Logo -->
+    <a href="#home" class="flex items-center gap-3 group">
+      <img
+        src="./assets/logo.png"
+        alt="Riddhi Siddhi Consultancy"
+        class="h-14 md:h-16 object-contain transition-transform duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]"
+      />
+    </a>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex space-x-12 text-white font-medium text-lg">
+      <a
+        href="#home"
+        class="relative hover:text-yellow-400 transition-colors duration-300 group"
+      >
+        Home
+        <span
+          class="absolute left-0 -bottom-1 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"
+        ></span>
+      </a>
+      <a
+        href="#about"
+        class="relative hover:text-yellow-400 transition-colors duration-300 group"
+      >
+        About
+        <span
+          class="absolute left-0 -bottom-1 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"
+        ></span>
+      </a>
+      <a
+        href="#services"
+        class="relative hover:text-yellow-400 transition-colors duration-300 group"
+      >
+        Services
+        <span
+          class="absolute left-0 -bottom-1 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"
+        ></span>
+      </a>
+      <a
+        href="#projects"
+        class="relative hover:text-yellow-400 transition-colors duration-300 group"
+      >
+        Projects
+        <span
+          class="absolute left-0 -bottom-1 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"
+        ></span>
+      </a>
+      <a
+        href="#contact"
+        class="relative hover:text-yellow-400 transition-colors duration-300 group"
+      >
+        Contact
+        <span
+          class="absolute left-0 -bottom-1 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"
+        ></span>
+      </a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="menu-btn"
+      class="md:hidden text-white p-2 rounded hover:bg-white/20 transition duration-300"
+      aria-label="Toggle menu"
+    >
+      <i data-lucide="menu" class="w-7 h-7"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Dropdown -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden bg-black/95 backdrop-blur-lg text-white px-6 py-6 space-y-5 text-lg rounded-b-xl shadow-xl transition-all duration-300"
+  >
+    <a
+      href="#home"
+      class="block py-2 hover:text-yellow-400 hover:bg-white/10 rounded-md transition-colors duration-300"
+      >Home</a
+    >
+    <a
+      href="#about"
+      class="block py-2 hover:text-yellow-400 hover:bg-white/10 rounded-md transition-colors duration-300"
+      >About</a
+    >
+    <a
+      href="#services"
+      class="block py-2 hover:text-yellow-400 hover:bg-white/10 rounded-md transition-colors duration-300"
+      >Services</a
+    >
+    <a
+      href="#projects"
+      class="block py-2 hover:text-yellow-400 hover:bg-white/10 rounded-md transition-colors duration-300"
+      >Projects</a
+    >
+    <a
+      href="#contact"
+      class="block py-2 hover:text-yellow-400 hover:bg-white/10 rounded-md transition-colors duration-300"
+      >Contact</a
+    >
+  </div>
+</header>
+    <!-- =========================
+       Home / Hero (kept intact)
+       ========================= -->
+    <section
+      id="home"
+      class="relative h-[85vh] flex items-center justify-center bg-cover bg-center"
+      style="background-image: url(./assets/aboutbg.png)"
+    >
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div data-aos="fade-up" class="relative text-center text-white z-10 px-6">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+          Welcome to
+          <span class="text-yellow-400">Ridhi-Sidhi</span> Consultancy
+        </h1>
+        <p class="text-lg md:text-xl max-w-2xl mx-auto mb-6">
+          Luxury interiors that blend creativity, functionality and timeless
+          elegance.
+        </p>
+        <a
+          href="#contact"
+          class="px-6 py-3 bg-yellow-500 text-white rounded-full font-semibold hover:bg-yellow-600 transition"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================
+       About Preview (kept intact)
+       ========================= -->
+    <section
+      id="about"
+      class="py-16 max-w-7xl mx-auto px-6 grid mt-10 md:grid-cols-2 gap-12 items-center"
+    >
+      <div data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-4">
+          <span class="text-yellow-600 font-semibold">About Us</span>
+        </h2>
+        <p class="text-gray-700 mb-6">
+          At <b>Ridhi-Sidhi</b> Consultancy, is a professional firm dedicated to
+          delivering innovative, practical, and aesthetically appealing
+          solutions in the field of design and construction. We specialize in a
+          wide range of services, including Architecture Planning, where
+          creativity meets functionality to craft efficient spaces; Structure
+          Designing, ensuring strength and stability with precision engineering;
+          Interior Designing, creating elegant, modern, and customized
+          interiors; and 3D Views, providing realistic visualizations to bring
+          concepts to life before execution. Along with this, we offer M.E.P.
+          (Mechanical, Electrical, and Plumbing) Services, ensuring seamless
+          technical integration for every project, and Vastu Consultation,
+          aligning designs with traditional principles for harmony and
+          prosperity. With a client-focused approach, Riddhi Siddhi Consultancy
+          transforms ideas into inspiring spaces that reflect both vision and
+          excellence.
+        </p>
+        <a
+          href="#about-full"
+          class="text-yellow-600 font-semibold hover:underline"
+          >Learn More →</a
+        >
+      </div>
+      <!-- fixed typo and replaced with free image -->
+      <img
+        data-aos="fade-up"
+        src="./assets/ridhisidhi2.pmg.jpg"
+        alt="About"
+        class="rounded-2xl shadow-lg"
+      />
+    </section>
+
+    <!-- =========================
+       Services Preview (kept intact)
+       ========================= -->
+    <section id="services" class="py-16 bg-gray-100">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 data-aos="fade-up" class="text-3xl font-bold mb-12">
+          Our Services
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            data-aos="fade-up"
+            class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition"
+          >
+            <h3 class="text-xl font-semibold mb-2 text-yellow-600">
+              Architecture Planning
+            </h3>
+            <p class="text-gray-600">
+              Innovative plans that balance aesthetics and functionality.
+            </p>
+          </div>
+          <div
+            data-aos="fade-up"
+            class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition"
+          >
+            <h3 class="text-xl font-semibold mb-2 text-yellow-600">
+              Structure Designing
+            </h3>
+            <p class="text-gray-600">
+              Safe and durable structures built with precision engineering.
+            </p>
+          </div>
+          <div
+            data-aos="fade-up"
+            class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition"
+          >
+            <h3 class="text-xl font-semibold mb-2 text-yellow-600">
+              Interior Designing
+            </h3>
+            <p class="text-gray-600">
+              Elegant interiors blending creativity and modern trends.
+            </p>
+          </div>
+        </div>
+        <div class="mt-8">
+          <a
+            href="#services-full"
+            class="text-yellow-600 font-semibold hover:underline"
+            >Explore All Services →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+       Projects (kept intact, Swiper used)
+       ========================= -->
+    <section id="projects" class="py-16 max-w-7xl mb-10 mx-auto px-6">
+      <h2 data-aos="fade-up" class="text-3xl font-bold text-center mb-12">
+        Our Projects
+      </h2>
+
+      <div class="projects-swiper swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- Slides (kept original items) -->
+          <div class="swiper-slide">
+            <div
+              class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-500"
+            >
+              <img
+                src="./assets/musqat.jpg"
+                alt="Muscat Project"
+                class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center px-4"
+              >
+                <h3 class="text-2xl font-bold text-yellow-400 mb-2">
+                  Muscat Project
+                </h3>
+                <p class="text-white">Oman</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div
+              class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-500"
+            >
+              <img
+                src="./assets/mahal.jpg"
+                alt="Chandranath ashram bagar"
+                class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center px-4"
+              >
+                <h3 class="text-2xl font-bold text-yellow-400 mb-2">
+                  Chandranath ashram bagar
+                </h3>
+                <p class="text-white">Bagar Jhunhjunu</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div
+              class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-500"
+            >
+              <img
+                src="./assets/officewithchair.jpg"
+                alt="Dhukia Nursing College"
+                class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center px-4"
+              >
+                <h3 class="text-2xl font-bold text-yellow-400 mb-2">
+                  Dhukia Nursing College
+                </h3>
+                <p class="text-white">Malsisar Raod Jhunjhunu</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div
+              class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-500"
+            >
+              <img
+                src="./assets/resort.jpg"
+                alt="Sun-shine Resort"
+                class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center px-4"
+              >
+                <h3 class="text-2xl font-bold text-yellow-400 mb-2">
+                  Sun-shine Resort
+                </h3>
+                <p class="text-white">Mandrella Bypass Jhunjhunu</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div
+              class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-500"
+            >
+              <img
+                src="./assets/schoolnatas.jpg"
+                alt="R.D. Memorial School"
+                class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center px-4"
+              >
+                <h3 class="text-2xl font-bold text-yellow-400 mb-2">
+                  R.D. Memorial School
+                </h3>
+                <p class="text-white">Village Natas Tehsil Udaipurwati</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div
+              class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-500"
+            >
+              <img
+                src="./assets/shreeshayam.jpg"
+                alt="Shree Shyam Kripa Kunj"
+                class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center px-4"
+              >
+                <h3 class="text-2xl font-bold text-yellow-400 mb-2">
+                  Shree Shyam Kripa Kunj
+                </h3>
+                <p class="text-white">Road-No.2 Maan Nagar Jhunjhunu</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination & Navigation -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+
+    <!-- =========================
+       CTA (kept intact)
+       ========================= -->
+    <section
+      class="relative py-20 bg-cover bg-center"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1600585152939-4c7a4b35cba8?auto=format&fit=crop&w=1600&q=80');
+      "
+    >
+      <div class="absolute inset-0 bg-black/60"></div>
+      <div class="relative max-w-3xl mx-auto text-center text-white px-6">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Want to Start Your Dream Project?
+        </h2>
+        <p class="mb-6 text-lg">
+          From concept to completion — we craft interiors that define luxury.
+        </p>
+        <a
+          href="#contact"
+          class="bg-yellow-500 hover:bg-yellow-600 px-8 py-3 rounded-lg font-semibold transition"
+          >Get in Touch</a
+        >
+      </div>
+    </section>
+
+    <!-- =========================
+       Team / Testimonials / Services full sections included below
+       (kept intact, minimal wrappers added to avoid duplicate IDs)
+       ========================= -->
+
+    <!-- Services - full page (kept original block) -->
+    <section id="services-full" class="bg-white">
+      <div class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold text-yellow-600 text-center mb-12">
+          Explore Our Expertise
+        </h2>
+        <div class="grid md:grid-cols-3 gap-10">
+          <div
+            class="p-10 bg-white border border-yellow-100 rounded-2xl shadow-lg hover:shadow-2xl text-center transition transform hover:-translate-y-2"
+          >
+            <div class="mb-6 flex justify-center text-yellow-500 text-4xl">
+              💎
+            </div>
+            <h3 class="text-xl font-semibold text-yellow-600 mb-4">
+              M.E.P. Services
+            </h3>
+            <p class="text-gray-600">
+              Tailor-made luxury spaces that reflect sophistication and class.
+            </p>
+          </div>
+
+          <div
+            class="p-10 bg-white border border-yellow-100 rounded-2xl shadow-lg hover:shadow-2xl text-center transition transform hover:-translate-y-2"
+          >
+            <div class="mb-6 flex justify-center text-yellow-500 text-4xl">
+              👑
+            </div>
+            <h3 class="text-xl font-semibold text-yellow-600 mb-4">3D View</h3>
+            <p class="text-gray-600">
+              Handpicked global luxury furniture to elevate your interiors.
+            </p>
+          </div>
+
+          <div
+            class="p-10 bg-white border border-yellow-100 rounded-2xl shadow-lg hover:shadow-2xl text-center transition transform hover:-translate-y-2"
+          >
+            <div class="mb-6 flex justify-center text-yellow-500 text-4xl">
+              ⭐
+            </div>
+            <h3 class="text-xl font-semibold text-yellow-600 mb-4">
+              Vastu Consultant
+            </h3>
+            <p class="text-gray-600">
+              Integrating technology seamlessly for modern lifestyle needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials / Premium / CTA (kept intact) -->
+    <section id="testimonials" class="py-20 max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-yellow-600 text-center mb-12">
+        What Our Clients Say
+      </h2>
+
+      <div class="testimonials-swiper swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- Testimonial 1 -->
+          <div class="swiper-slide">
+            <div
+              class="bg-white rounded-xl shadow-md p-6 border border-yellow-100 hover:shadow-xl transition transform hover:-translate-y-1 h-full flex flex-col justify-between"
+            >
+              <div class="flex text-yellow-500 mb-3">★★★★★</div>
+              <p class="text-gray-600 mb-6 flex-1">
+                “Their premium design services completely transformed my home.
+                It feels like a 5-star luxury hotel now!”
+              </p>
+              <div class="flex items-center gap-4 mt-auto">
+                <img
+                  src="https://i.pravatar.cc/100?img=47"
+                  alt="Dr. Deepak"
+                  class="w-12 h-12 rounded-full border-2 border-yellow-400"
+                />
+                <h4 class="text-lg font-semibold text-yellow-600">
+                  Sophia Khan
+                </h4>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="swiper-slide">
+            <div
+              class="bg-white rounded-xl shadow-md p-6 border border-yellow-100 hover:shadow-xl transition transform hover:-translate-y-1 h-full flex flex-col justify-between"
+            >
+              <div class="flex text-yellow-500 mb-3">★★★★★</div>
+              <p class="text-gray-600 mb-6 flex-1">
+                “From consultation to execution, everything was top-notch.
+                Highly recommend their premium package!”
+              </p>
+              <div class="flex items-center gap-4 mt-auto">
+                <img
+                  src="https://i.pravatar.cc/100?img=12"
+                  alt="Sandeep ji Dhukia"
+                  class="w-12 h-12 rounded-full border-2 border-yellow-400"
+                />
+                <h4 class="text-lg font-semibold text-yellow-600">
+                  Rahul Verma
+                </h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div
+              class="bg-white rounded-xl shadow-md p-6 border border-yellow-100 hover:shadow-xl transition transform hover:-translate-y-1 h-full flex flex-col justify-between"
+            >
+              <div class="flex text-yellow-500 mb-3">★★★★★</div>
+              <p class="text-gray-600 mb-6 flex-1">
+                “For Sandeep ji Dhukia, we delivered a premium office design
+                that reflects professionalism, prestige, and trust!”
+              </p>
+              <div class="flex items-center gap-4 mt-auto">
+                <img
+                  src="https://i.pravatar.cc/100?img=12"
+                  alt="Sandeep ji Dhukia"
+                  class="w-12 h-12 rounded-full border-2 border-yellow-400"
+                />
+                <h4 class="text-lg font-semibold text-yellow-600">
+                  Sophia Khan
+                </h4>
+              </div>
+            </div>
+          </div>
+
+          <!-- You can add more testimonial slides here -->
+        </div>
+
+        <div class="swiper-pagination mt-4"></div>
+      </div>
+    </section>
+
+    <!-- Team section (kept intact) -->
+    <section id="team" class="bg-gray-50 py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-yellow-600 text-center mb-12">
+          Meet Our Team
+        </h2>
+
+        <div class="team-swiper swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide p-4">
+              <div
+                class="bg-white rounded-xl shadow hover:shadow-xl p-6 text-center"
+              >
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                />
+                <h3 class="text-lg font-bold text-yellow-600">MR.Bath</h3>
+                <p class="text-gray-600">Lead Designer</p>
+              </div>
+            </div>
+
+            <div class="swiper-slide p-4">
+              <div
+                class="bg-white rounded-xl shadow hover:shadow-xl p-6 text-center"
+              >
+                <img
+                  src="https://randomuser.me/api/portraits/men/44.jpg"
+                  class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                />
+                <h3 class="text-lg font-bold text-yellow-600">
+                  Dr. KUNDAN SINGH
+                </h3>
+                <p class="text-gray-600">Creative Head</p>
+              </div>
+            </div>
+
+            <div class="swiper-slide p-4">
+              <div
+                class="bg-white rounded-xl shadow hover:shadow-xl p-6 text-center"
+              >
+                <img
+                  src="https://randomuser.me/api/portraits/men/47.jpg"
+                  class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                />
+                <h3 class="text-lg font-bold text-yellow-600">
+                  Mr. RAJKUMAR JI
+                </h3>
+                <p class="text-gray-600">Project Manager</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-pagination mt-4"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+       Contact (kept intact)
+       ========================= -->
+    <section id="contact" class="py-16 bg-yellow-600 text-white">
+      <h2 data-aos="fade-up" class="text-3xl font-bold text-center mb-4">
+        Let’s Work Together
+      </h2>
+      <p class="text-center mb-12">
+        Have a project in mind? We’d love to bring it to life.
+      </p>
+
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+        <div
+          data-aos="fade-up"
+          class="bg-white p-8 rounded-2xl shadow-lg text-gray-900"
+        >
+          <h3 class="text-3xl font-bold text-yellow-600 mb-6">
+            Contact Information
+          </h3>
+          <p class="text-yellow-500">
+            <strong>Email:</strong> riddhisiddhiconsultancy907@gmail.com
+          </p>
+          <p class="text-yellow-500">
+            <strong>Phone:</strong> +91 9314210149 , +91 9785195528
+          </p>
+          <p class="text-yellow-500">
+            <strong>Address:</strong> D-91, Indra Nagar, Opp. BSNL Office Near
+            Mandawa Mode, Jhunjhunu (Raj.)
+          </p>
+          <iframe
+            title="map"
+            class="w-full mt-6 h-64 rounded-xl shadow-lg"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3518.984310505492!2d75.3867136!3d28.116508800000048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39133944882f487f%3A0xe024a94a6f94ba88!2sRiddhi%20Siddhi%20Consultants!5e0!3m2!1sen!2sin!4v1758173084059!5m2!1sen!2sin"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+
+        <div
+          data-aos="fade-up"
+          class="bg-white p-8 rounded-2xl shadow-lg text-gray-900"
+        >
+          <h3 class="text-2xl font-bold mb-6 text-yellow-600">
+            Send Us a Message
+          </h3>
+          <form id="contact-form" class="flex flex-col gap-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            />
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+              class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            ></textarea>
+            <button
+              type="submit"
+              class="bg-yellow-600 text-white font-semibold py-3 rounded-lg hover:bg-yellow-700 transition"
+            >
+              Send Message
+            </button>
+          </form>
+          <div id="contact-feedback" class="mt-4 text-sm"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+       Footer (kept intact)
+       ========================= -->
+    <footer class="bg-yellow-700 text-white py-12 mt-16">
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+        <!-- Brand Info -->
+        <div class="flex flex-col gap-4">
+          <h4 class="text-2xl font-bold">
+            <span class="text-yellow-100">Ridhi-Sidhi</span> Consultancy
+          </h4>
+          <p class="text-yellow-100">
+            Luxury interiors that inspire and elevate living.
+          </p>
+          <div class="flex gap-4 mt-3">
+            <a
+              href="https://www.facebook.com/yourpage"
+              target="_blank"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-blue-600 transition duration-300"
+            >
+              <span class="text-white text-lg">f</span>
+            </a>
+            <a
+              href="https://www.instagram.com/riddhi.siddhi_consultancy"
+              target="_blank"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-pink-500 transition duration-300"
+            >
+              <span class="text-white text-lg">📷</span>
+            </a>
+            <a
+              href="https://wa.me/919876543210"
+              target="_blank"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-green-500 transition duration-300"
+            >
+              <span class="text-white text-lg">💬</span>
+            </a>
+            <a
+              href="https://twitter.com/yourhandle"
+              target="_blank"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-sky-500 transition duration-300"
+            >
+              <span class="text-white text-lg">🐦</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-3 text-yellow-100">
+            <li>
+              <a href="#about" class="hover:text-white transition duration-300"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="#services"
+                class="hover:text-white transition duration-300"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projects"
+                class="hover:text-white transition duration-300"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="hover:text-white transition duration-300"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Contact</h4>
+          <p class="text-yellow-100 flex items-center gap-2">
+            📍 D-91, Indra Nagar, Opp. BSNL Office Near Mandawa Mode, Jhunjhunu
+            (Raj.)
+          </p>
+          <p class="text-yellow-100 flex items-center gap-2 mt-2">
+            📞
+            <a
+              href="tel:+919314210149"
+              class="hover:text-white transition duration-300"
+              >+91 9314210149</a
+            >,
+            <a
+              href="tel:+919785195528"
+              class="hover:text-white transition duration-300"
+              >+91 9785195528</a
+            >
+          </p>
+          <p class="text-yellow-100 flex items-center gap-2 mt-2">
+            ✉
+            <a
+              href="mailto:riddhisiddhiconsultancy907@gmail.com"
+              class="hover:text-white transition duration-300"
+              >riddhisiddhiconsultancy907@gmail.com</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div
+        class="text-center mt-10 text-yellow-200 text-sm border-t border-yellow-600 pt-4"
+      >
+        © <span id="current-year"></span> Ridhi-Sidhi Consultancy. All Rights
+        Reserved. <br />
+        Designed & Developed by
+        <a
+          href="#"
+          class="hover:text-white transition duration-300 font-semibold"
+          >Adil Ansari</a
+        >
+      </div>
+    </footer>
+
+    <!-- Optional: auto update year -->
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
+
+    <!-- =========================
+       External JS file (app.js)
+       Include it BELOW so DOM is present
+       ========================= -->
+    <script src="script.js"></script>
+
+    <!-- Swiper JS (v11) loaded at end for initialization in app.js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- small inline helper to show current year (non-invasive) -->
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+
+      // mobile menu toggle (kept minimal so you don't need to edit script.js necessarily)
+      document
+        .getElementById("menu-btn")
+        ?.addEventListener("click", function () {
+          const m = document.getElementById("mobile-menu");
+          if (!m) return;
+          m.classList.toggle("hidden");
+        });
+    </script>
+  </body>
+</html>
